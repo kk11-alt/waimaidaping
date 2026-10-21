@@ -98,7 +98,6 @@
         grid-column: span 1;
         height: 310px;
     }
-    /* 新增：占2格的中等卡片，用来放核销率 */
     .chart-card-md2 {
         grid-column: span 2;
         height: 310px;
@@ -211,7 +210,7 @@
     </div>
 
     <div class="chart-card chart-card-md">
-        <div class="chart-title">用户-店铺距离分布</div>
+        <div class="chart-title">用户‑店铺距离分布</div>
         <div id="chart2"></div>
     </div>
 
@@ -220,7 +219,6 @@
         <div id="chart5"></div>
     </div>
 
-    <!-- 第二行：1格 + 1格 + 2格，填满4列 -->
     <div class="chart-card chart-card-md">
         <div class="chart-title">每日活跃店铺数量</div>
         <div id="chart3"></div>
@@ -248,7 +246,7 @@
 
 <script>
     const statData = {
-        shopOrderDistX: ["0-5", "6-100", "101-500", "501-1000", "1001-2000", ">2000"],
+        shopOrderDistX: ["0‑5", "6‑100", "101‑500", "501‑1000", "1001‑2000", ">2000"],
         shopOrderDistY: [3210, 4120, 760, 200, 133, 92],
         distanceX: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
         distanceY: [620000, 213000, 154000, 98000, 72000, 51000, 33000, 26000, 19000, 14000, 42000],
@@ -291,17 +289,22 @@
             borderColor: "#f0ddc2",
             textStyle: { color: "#705940" }
         },
-        grid: { left: 45, right: 18, top: 24, bottom: 28 },
+        grid: { left: 56, right: 20, top: 36, bottom: 44 },
         xAxis: {
             type: "category",
+            name: "店铺累计订单量区间（单）",
+            nameLocation: "middle",
+            nameGap: 30,
+            nameTextStyle: { color: textColor, fontSize: 11 },
             data: statData.shopOrderDistX,
             axisLabel: { color: textColor },
             axisLine: { lineStyle: { color: "#e2cdb0" } }
         },
         yAxis: {
             type: "value",
-            name: "店铺数",
-            nameTextStyle: { color: textColor },
+            name: "店铺数（家）",
+            nameGap: 12,
+            nameTextStyle: { color: textColor, fontSize: 11 },
             splitLine: { lineStyle: { color: splitColor } },
             axisLabel: { color: textColor }
         },
@@ -358,17 +361,22 @@
             borderColor: "#f0ddc2",
             textStyle: { color: "#705940" }
         },
-        grid: { left: 48, right: 18, top: 18, bottom: 28 },
+        grid: { left: 52, right: 18, top: 34, bottom: 40 },
         xAxis: {
             type: "category",
+            name: "月份",
+            nameLocation: "middle",
+            nameGap: 26,
+            nameTextStyle: { color: textColor, fontSize: 11 },
             data: ["01月", "02月", "03月", "04月", "05月", "06月"],
             axisLabel: { color: textColor },
             axisLine: { lineStyle: { color: "#e2cdb0" } }
         },
         yAxis: {
             type: "value",
-            name: "店铺数",
-            nameTextStyle: { color: textColor },
+            name: "活跃店铺数（家）",
+            nameGap: 10,
+            nameTextStyle: { color: textColor, fontSize: 11 },
             splitLine: { lineStyle: { color: splitColor } },
             axisLabel: { color: textColor }
         },
@@ -393,17 +401,22 @@
             borderColor: "#f0ddc2",
             textStyle: { color: "#705940" }
         },
-        grid: { left: 55, right: 18, top: 18, bottom: 28 },
+        grid: { left: 62, right: 18, top: 34, bottom: 40 },
         xAxis: {
             type: "category",
+            name: "月份",
+            nameLocation: "middle",
+            nameGap: 26,
+            nameTextStyle: { color: textColor, fontSize: 11 },
             data: ["01月", "02月", "03月", "04月", "05月", "06月"],
             axisLabel: { color: textColor },
             axisLine: { lineStyle: { color: "#e2cdb0" } }
         },
         yAxis: {
             type: "value",
-            name: "订单量",
-            nameTextStyle: { color: textColor },
+            name: "订单量（笔）",
+            nameGap: 10,
+            nameTextStyle: { color: textColor, fontSize: 11 },
             splitLine: { lineStyle: { color: splitColor } },
             axisLabel: { color: textColor }
         },
@@ -428,15 +441,21 @@
             borderColor: "#f0ddc2",
             textStyle: { color: "#705940" }
         },
-        grid: { left: 68, right: 18, top: 18, bottom: 28 },
+        grid: { left: 72, right: 20, top: 30, bottom: 40 },
         xAxis: {
             type: "value",
+            name: "累计订单量（笔）",
+            nameLocation: "middle",
+            nameGap: 26,
+            nameTextStyle: { color: textColor, fontSize: 11 },
             splitLine: { lineStyle: { color: splitColor } },
             axisLabel: { color: textColor },
             axisLine: { lineStyle: { color: "#e2cdb0" } }
         },
         yAxis: {
             type: "category",
+            name: "商户名称",
+            nameTextStyle: { color: textColor, fontSize: 11 },
             data: statData.topShopName.slice().reverse(),
             axisLabel: { color: textColor },
             axisLine: { lineStyle: { color: "#e2cdb0" } }
@@ -462,17 +481,22 @@
             borderColor: "#f0ddc2",
             textStyle: { color: "#705940" }
         },
-        grid: { left: 65, right: 18, top: 18, bottom: 36 },
+        grid: { left: 68, right: 20, top: 34, bottom: 48 },
         xAxis: {
             type: "category",
+            name: "满减档位（满X减Y / 折扣力度）",
+            nameLocation: "middle",
+            nameGap: 32,
+            nameTextStyle: { color: textColor, fontSize: 11 },
             data: statData.couponTypeX,
             axisLabel: { color: textColor, rotate: 10 },
             axisLine: { lineStyle: { color: "#e2cdb0" } }
         },
         yAxis: {
             type: "value",
-            name: "领取数量",
-            nameTextStyle: { color: textColor },
+            name: "优惠券领取数量（张）",
+            nameGap: 10,
+            nameTextStyle: { color: textColor, fontSize: 11 },
             splitLine: { lineStyle: { color: splitColor } },
             axisLabel: { color: textColor }
         },
@@ -498,16 +522,21 @@
             textStyle: { color: "#705940" },
             formatter:"距离：{b} ｜核销率：{c}%"
         },
-        grid:{left:42,right:12,top:18,bottom:28},
+        grid:{left:48,right:16,top:32,bottom:40},
         xAxis:{
             type:"category",
+            name:"用户与店铺距离（km）",
+            nameLocation:"middle",
+            nameGap:26,
+            nameTextStyle:{color:textColor,fontSize:11},
             data:statData.distanceX,
             axisLabel:{color:textColor,fontSize:11},
             axisLine:{lineStyle:{color:"#e2cdb0"}}
         },
         yAxis:{
             type:"value",
-            name:"核销率(%)",
+            name:"核销率（%）",
+            nameGap:8,
             nameTextStyle:{color:textColor,fontSize:11},
             min:0,max:100,
             splitLine:{lineStyle:{color:splitColor}},
