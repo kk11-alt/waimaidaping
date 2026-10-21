@@ -174,8 +174,9 @@
 <div class="main-title">外卖店铺数量挖掘可视化大屏｜天池O2O优惠券分析</div>
 
 <div class="intro-panel">
-    <strong>项目说明：</strong>本项目基于阿里云天池CCF O2O优惠券数据集，对外卖店铺进行数据挖掘；分析店铺订单分布、用户距离、活跃趋势、优惠券使用情况。
-    <strong>数据源：</strong>ccf_offline_stage1_train.csv｜<strong>交互说明：</strong>点击“店铺订单量分布”柱状图，查看该区间店铺数量及占比。
+    <strong>项目说明：</strong>本项目基于阿里云天池O2O优惠券数据集，对外卖店铺进行数据挖掘；分析店铺订单分布、用户距离、活跃趋势、优惠券使用情况。
+    <strong>数据源：</strong>阿里云天池O2O优惠券数据集(ccf_offline_stage1_train.csv)  
+    <strong>交互说明：</strong>点击“店铺订单量分布”柱状图，查看该区间店铺数量及占比。
 </div>
 
 <div class="tip-layer" id="tipBox">
@@ -205,7 +206,7 @@
 
 <div class="container-wrap">
     <div class="chart-card chart-card-lg">
-        <div class="chart-title">店铺订单量分布（点击柱状查看占比）</div>
+        <div class="chart-title">店铺领券次数分布（点击柱状查看占比）</div>
         <div id="chart1"></div>
     </div>
 
@@ -241,7 +242,7 @@
 </div>
 
 <footer>
-    课程大作业｜数据源：阿里云天池 CCF O2O优惠券使用预测数据集｜基于ECharts5可视化开发
+    课程大作业｜数据源：阿里云天池O2O优惠券使用预测数据集｜基于ECharts5可视化开发
 </footer>
 
 <script>
@@ -292,7 +293,7 @@
         grid: { left: 56, right: 20, top: 36, bottom: 44 },
         xAxis: {
             type: "category",
-            name: "店铺累计订单量区间（单）",
+            name: "店铺累计领券次数区间（单）",
             nameLocation: "middle",
             nameGap: 30,
             nameTextStyle: { color: textColor, fontSize: 11 },
